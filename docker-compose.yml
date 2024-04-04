@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  todo-frontend:
+    image: nginx:alpine
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    ports:
+      - "80:80"
+    networks:
+      - todo-network
+
+networks:
+  todo-network:
+    external: false
+

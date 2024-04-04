@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  todo-db:
+    image: sqlite:latest
+    container_name: todo-db
+    volumes:
+      - ./data:/data
+    networks:
+      - bridge
+
+networks:
+  bridge:
+    driver: overlay
+
